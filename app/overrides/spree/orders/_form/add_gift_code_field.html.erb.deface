@@ -4,10 +4,9 @@
   <tr>
     <td colspan="6">
       <p><strong>Gift Card</strong></p>
-      <p>If you received a gift card from <%= Spree::Config.site_name %>, enter the gift card code below.</p>
-      <%= order_form.label :gift_code %>
+      <p>If you have a gift card from <%= Spree::Config.site_name %>, enter the gift card code below and click "Redeem".</p>
       <%= order_form.text_field :gift_code, :size => 10, :class => "form-control", :id => "gift_card_input" %>
-      <%= order_form.submit Spree.t(:apply), :class => "btn btn-default" %>
+      <%= order_form.submit Spree.t(:redeem), :class => "btn btn-default" %>
     </td>
   </tr>
 </tbody>
