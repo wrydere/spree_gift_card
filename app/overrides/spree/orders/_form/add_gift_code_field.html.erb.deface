@@ -6,7 +6,7 @@
       <p><strong>Gift Card</strong></p>
       <p>If you have a gift card from <%= Spree::Config.site_name %>, enter the gift card code below and click "Redeem".</p>
       <%= order_form.text_field :gift_code, :size => 10, :class => "form-control", :id => "gift_card_input" %>
-      <%= order_form.submit Spree.t(:redeem), :class => "btn btn-default" %>
+      <%= order_form.submit "Redeem Gift Card", :class => "btn btn-info", :id => "gift_card_submit_button" %>
     </td>
   </tr>
 </tbody>
