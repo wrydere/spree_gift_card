@@ -7,17 +7,23 @@
     <%= f.select :variant_id, @gift_card_variants.map { |variant| [variant.display_price, variant.id] } %>
   </p>
   <p>
-    <%= f.label :email, Spree.t("email") %>
+    <%= f.label :sender, "Sender's Name") %>
+    <span class="required">*</span><br/>
+    <%= f.text_field :sender %>
+  </p>
+  <p>
+    <%= f.label :email, "Recipient's Email Address" %>
     <span class="required">*</span><br/>
     <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.label :name, Spree.t("recipient_name") %>
+    <%= f.label :name, "Recipient's Name" %>
     <span class="required">*</span><br/>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :note, Spree.t("note") %><br/>
+    <%= f.label :note, "Note" %><br/>
+    <p class="help">Enter a note for the recipient. They'll receive this note with their gift card code.</p>
     <%= f.text_area :note, :rows => 10 %>
   </p>
   <%= f.submit Spree.t(:add_to_cart) %>

@@ -5,7 +5,7 @@ module Spree
 
     UNACTIVATABLE_ORDER_STATES = ["complete", "awaiting_return", "returned"]
 
-    attr_accessible :email, :name, :note, :variant_id
+    attr_accessible :email, :name, :note, :variant_id, :sender
 
     belongs_to :variant
     belongs_to :line_item
@@ -17,6 +17,7 @@ module Spree
     validates :email, email: true, presence: true
     validates :name,               presence: true
     validates :original_value,     presence: true
+    validates :sender,              presence: true
 
     before_validation :generate_code, on: :create
     before_validation :set_calculator, on: :create
